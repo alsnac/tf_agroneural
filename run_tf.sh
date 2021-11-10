@@ -11,13 +11,11 @@
 pipeline_download_id="1d3wZD8nF_CLS-aL8fbdccM6RhVCFrapJ"
 model_name = "efficientdet_d3_coco17_tpu-32"
 
+cd $1
+wget "http://download.tensorflow.org/models/object_detection/tf2/20200711/${model_name}.tar.gz"
+tar -xf "${model_name}.tar.gz"
+rm "${model_name}.tar.gz"
 
-#mkdir $1
-#cd $1
-#wget "http://download.tensorflow.org/models/object_detection/tf2/20200711/${model_name}.tar.gz"
-#tar -xf "${model_name}.tar.gz"
-#rm "${model_name}.tar.gz"
-mkdir $2
 cd  $2
 wget --no-check-certificate "https://docs.google.com/uc?export=download&id=${pipeline_download_id}" -O pipeline.config
 
