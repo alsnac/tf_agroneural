@@ -14,7 +14,7 @@
 #----------------------------------------------------------------------------------------------------------------------
 
 #-----------------EficienteDet D2------------------------------
-pipeline_download_id="152rFIMP5AIYImk2x-2E3bkeOyMhZbKim"
+pipeline_download_id="1LLxH0Yyt9hD3cdK923Why_Gwr4Tbsbvc"
 model_name = "efficientdet_d2_coco17_tpu-32"
 #--------------------------------------------------------------
 
