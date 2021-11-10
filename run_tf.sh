@@ -13,14 +13,14 @@
 # Parte do ID do pipeline.config do link de compartilhado gerado no Google Drive
 #----------------------------------------------------------------------------------------------------------------------
 
-#-----------------EficienteDet D3------------------------------
-#pipeline_download_id="1d3wZD8nF_CLS-aL8fbdccM6RhVCFrapJ"
-#model_name = "efficientdet_d3_coco17_tpu-32"
-#--------------------------------------------------------------
-
 #-----------------EficienteDet D2------------------------------
 pipeline_download_id="152rFIMP5AIYImk2x-2E3bkeOyMhZbKim"
 model_name = "efficientdet_d2_coco17_tpu-32"
+#--------------------------------------------------------------
+
+#-----------------EficienteDet D3------------------------------
+#pipeline_download_id="1d3wZD8nF_CLS-aL8fbdccM6RhVCFrapJ"
+#model_name = "efficientdet_d3_coco17_tpu-32"
 #--------------------------------------------------------------
 
 #----------------------------------------------------------------------------------------------------------------------
@@ -29,6 +29,7 @@ model_name = "efficientdet_d2_coco17_tpu-32"
 #----------------------------------------------------------------------------------------------------------------------
 #---------------------------------------------------modelo-pre-treinado------------------------------------------------
 #Se quiser utilizar o modelo pre-treinando, adicionar em python model_main_tf2.py 
+#mkdir $1
 #cd $1
 #wget "http://download.tensorflow.org/models/object_detection/tf2/20200711/${model_name}.tar.gz"
 #tar -xf "${model_name}.tar.gz"
