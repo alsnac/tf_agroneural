@@ -9,7 +9,8 @@
 
 # Parte do ID do pipeline.config do link de compartilhado gerado no Google Drive
 pipeline_download_id="1d3wZD8nF_CLS-aL8fbdccM6RhVCFrapJ"
-model_name = efficientdet_d4_coco17_tpu-32
+model_name = "efficientdet_d3_coco17_tpu-32"
+
 
 mkdir $1
 cd $1
