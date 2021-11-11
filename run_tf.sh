@@ -39,6 +39,7 @@ model_name = "efficientdet_d2_coco17_tpu-32"
 #---------------------------------------------------baixando-o-pipeline------------------------------------------------
 mkdir $2
 cd  $2
+echo "wget https://raw.githubusercontent.com/alsnac/tf_agroneural/main/pipeline.config"
 wget https://raw.githubusercontent.com/alsnac/tf_agroneural/main/pipeline.config
 #----------------------------------------------------------------------------------------------------------------------
 
