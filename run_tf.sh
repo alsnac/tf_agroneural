@@ -14,12 +14,10 @@
 #----------------------------------------------------------------------------------------------------------------------
 
 #-----------------EficienteDet D2------------------------------
-pipeline_download_id="1LLxH0Yyt9hD3cdK923Why_Gwr4Tbsbvc"
 model_name = "efficientdet_d2_coco17_tpu-32"
 #--------------------------------------------------------------
 
 #-----------------EficienteDet D3------------------------------
-#pipeline_download_id="1d3wZD8nF_CLS-aL8fbdccM6RhVCFrapJ"
 #model_name = "efficientdet_d3_coco17_tpu-32"
 #--------------------------------------------------------------
 
@@ -41,7 +39,7 @@ model_name = "efficientdet_d2_coco17_tpu-32"
 #---------------------------------------------------baixando-o-pipeline------------------------------------------------
 mkdir $2
 cd  $2
-wget --no-check-certificate "https://docs.google.com/uc?export=download&id=${pipeline_download_id}" -O pipeline.config
+wget https://github.com/alsnac/tf_agroneural/blob/main/pipeline.config
 #----------------------------------------------------------------------------------------------------------------------
 
 
