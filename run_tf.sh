@@ -57,6 +57,7 @@ mv models/my_model "models/${model_name}"
 
 #dar permissão para todos
 chmod -r 777 "models/${model_name}"
+chmod -r 777 "$3/exported-models"
 
 #Exportar
 python exporter_main_v2.py --input_type image_tensor --pipeline_config_path="$4/pipeline.config" --trained_checkpoint_dir $4 --output_directory "$3/exported-models"
