@@ -14,10 +14,8 @@
 #----------------------------------------------------------------------------------------------------------------------
 
 #-----------------SSD Mobilenet v2 320x320---------------------
-model_name_bash="ssd_mobilenet_v2_320x320_coco17_tpu-8"
+model_name="ssd_mobilenet_v2_320x320_coco17_tpu-8"
 #--------------------------------------------------------------
-
-echo $model_name_bash
 
 #-----------------EficienteDet D2------------------------------
 #model_name = "efficientdet_d2_coco17_tpu-32"
@@ -41,6 +39,7 @@ echo $model_name_bash
 #----------------------------------------------------------------------------------------------------------------------
 
 
+
 #----------------------------------------------------------------------------------------------------------------------
 #---------------------------------------------------baixando-o-pipeline------------------------------------------------
 mkdir $2
@@ -56,23 +55,23 @@ wget https://raw.githubusercontent.com/alsnac/tf_agroneural/main/pipeline.config
 cd $3
 
 #Treinamento
-#python model_main_tf2.py --model_dir=$4 --pipeline_config_path="$4/pipeline.config"
+python model_main_tf2.py --model_dir=$4 --pipeline_config_path="$4/pipeline.config"
 
 #dar permissão para todos
 chmod -R 777 "models/my_model"
 
 #renomear a pasta my_models para o nome do modelo
-#mv models/my_model "models/$model_name"
+mv models/my_model "models/$model_name"
 
 
 #Exportar
-#python exporter_main_v2.py --input_type image_tensor --pipeline_config_path="$4/pipeline.config" --trained_checkpoint_dir $4 --output_directory "$3/exported-models"
+python exporter_main_v2.py --input_type image_tensor --pipeline_config_path="models/$model_name/pipeline.config" --trained_checkpoint_dir "models/$model_name" --output_directory "exported-models/"
 
 #dar permissão para todos
-#chmod -R 777 "$3/exported-models"
+chmod -R 777 "$3/exported-models"
 
 #Avaliação
-#python model_main_tf2.py --model_dir=$4 --pipeline_config_path="$4/pipeline.config" --checkpoint_dir=$4 --num_workers=1 --sample_1_of_n_eval_examples=1
+python model_main_tf2.py --model_dir="models/$model_name" --pipeline_config_path="models/$model_name/pipeline.config" --checkpoint_dir="models/$model_name" --num_workers=1 --sample_1_of_n_eval_examples=1
 #----------------------------------------------------------------------------------------------------------------------
 
 tail -f /dev/null
