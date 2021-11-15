@@ -63,7 +63,6 @@ chmod -R 777 "models/my_model"
 #renomear a pasta my_models para o nome do modelo
 mv models/my_model "models/$model_name"
 
-
 #Exportar
 python exporter_main_v2.py --input_type image_tensor --pipeline_config_path="models/$model_name/pipeline.config" --trained_checkpoint_dir "models/$model_name" --output_directory "exported-models/"
 
