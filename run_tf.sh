@@ -17,7 +17,7 @@
 model_name_bash="ssd_mobilenet_v2_320x320_coco17_tpu-8"
 #--------------------------------------------------------------
 
-echo "$model_name_bash"
+echo $model_name_bash
 
 #-----------------EficienteDet D2------------------------------
 #model_name = "efficientdet_d2_coco17_tpu-32"
