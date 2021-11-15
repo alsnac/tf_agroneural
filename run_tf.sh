@@ -14,7 +14,7 @@
 #----------------------------------------------------------------------------------------------------------------------
 
 #-----------------SSD Mobilenet v2 320x320---------------------
-model_name = "ssd_mobilenet_v2_320x320_coco17_tpu-8"
+model_name_bash = "ssd_mobilenet_v2_320x320_coco17_tpu-8"
 #--------------------------------------------------------------
 
 #-----------------EficienteDet D2------------------------------
@@ -57,13 +57,12 @@ cd $3
 #python model_main_tf2.py --model_dir=$4 --pipeline_config_path="$4/pipeline.config"
 
 #dar permissão para todos
-#chmod -R 777 "models/my_model"
+chmod -R 777 "models/my_model"
 
 #renomear a pasta my_models para o nome do modelo
 #mv models/my_model "models/$model_name"
 
-pwd
-echo "models/$model_name"
+echo "models/$model_name_bash"
 
 #Exportar
 #python exporter_main_v2.py --input_type image_tensor --pipeline_config_path="$4/pipeline.config" --trained_checkpoint_dir $4 --output_directory "$3/exported-models"
