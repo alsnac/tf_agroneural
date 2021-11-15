@@ -54,22 +54,25 @@ wget https://raw.githubusercontent.com/alsnac/tf_agroneural/main/pipeline.config
 cd $3
 
 #Treinamento
-python model_main_tf2.py --model_dir=$4 --pipeline_config_path="$4/pipeline.config"
+#python model_main_tf2.py --model_dir=$4 --pipeline_config_path="$4/pipeline.config"
 
 #dar permissão para todos
-chmod -R 777 "models/my_model"
+#chmod -R 777 "models/my_model"
 
 #renomear a pasta my_models para o nome do modelo
-mv models/my_model "models/$model_name"
+#mv models/my_model "models/$model_name"
+
+pwd
+echo "models/$model_name"
 
 #Exportar
-python exporter_main_v2.py --input_type image_tensor --pipeline_config_path="$4/pipeline.config" --trained_checkpoint_dir $4 --output_directory "$3/exported-models"
+#python exporter_main_v2.py --input_type image_tensor --pipeline_config_path="$4/pipeline.config" --trained_checkpoint_dir $4 --output_directory "$3/exported-models"
 
 #dar permissão para todos
-chmod -R 777 "$3/exported-models"
+#chmod -R 777 "$3/exported-models"
 
 #Avaliação
-python model_main_tf2.py --model_dir=$4 --pipeline_config_path="$4/pipeline.config" --checkpoint_dir=$4 --num_workers=1 --sample_1_of_n_eval_examples=1
+#python model_main_tf2.py --model_dir=$4 --pipeline_config_path="$4/pipeline.config" --checkpoint_dir=$4 --num_workers=1 --sample_1_of_n_eval_examples=1
 #----------------------------------------------------------------------------------------------------------------------
 
 tail -f /dev/null
