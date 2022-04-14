@@ -1,0 +1,8 @@
+train: datasets/train
+val: datasets/test
+nc: 4
+names: ['helicoverpa_armigera',
+        'spodoptera_frugiperda',
+        'dichelops_melacanthus',
+        'anticarsia_gemmatalis',
+]
