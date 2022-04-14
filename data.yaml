@@ -1,5 +1,5 @@
-train: datasets/train
-val: datasets/test
+train: agro_dataset_four/train
+val: agro_dataset_four/test
 nc: 4
 names: ['helicoverpa_armigera',
         'spodoptera_frugiperda',
