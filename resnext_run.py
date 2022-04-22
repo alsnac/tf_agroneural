@@ -6,7 +6,7 @@ import cv2
 from icevision.all import *
 
 
-IPython.Application.instance().kernel.do_shutdown(True)
+#IPython.Application.instance().kernel.do_shutdown(True)
 
 root = '/agroneural_pragas'
 train_root = os.path.join(root, 'train')
