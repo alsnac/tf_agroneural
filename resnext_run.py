@@ -38,9 +38,9 @@ model = model_type.model(backbone=backbone(
     pretrained=True), num_classes=len(parser.class_map))
 
 train_dl = model_type.train_dl(
-    train_ds, batch_size=20, num_workers=2, shuffle=True)
+    train_ds, batch_size=16, num_workers=2, shuffle=True)
 valid_dl = model_type.valid_dl(
-    valid_ds, batch_size=20, num_workers=2, shuffle=False)
+    valid_ds, batch_size=16, num_workers=2, shuffle=False)
 
 metrics = [COCOMetric(metric_type=COCOMetricType.bbox)]
 cbs = [fastai.SaveModelCallback()]
