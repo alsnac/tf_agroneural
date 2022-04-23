@@ -38,9 +38,9 @@ model = model_type.model(backbone=backbone(
     pretrained=True), num_classes=len(parser.class_map))
 
 train_dl = model_type.train_dl(
-    train_ds, batch_size=6, num_workers=2, shuffle=True)
+    train_ds, batch_size=20, num_workers=2, shuffle=True)
 valid_dl = model_type.valid_dl(
-    valid_ds, batch_size=6, num_workers=2, shuffle=False)
+    valid_ds, batch_size=20, num_workers=2, shuffle=False)
 
 metrics = [COCOMetric(metric_type=COCOMetricType.bbox)]
 cbs = [fastai.SaveModelCallback()]
@@ -48,7 +48,7 @@ learn = model_type.fastai.learner(
     dls=[train_dl, valid_dl], model=model, metrics=metrics, path='/agroneural_pragas/checkpoints')
 
 learn.model.cuda()
-learn.fine_tune(50, 3.3e-4, freeze_epochs=1, cbs=cbs)
+learn.fine_tune(300, 3.3e-4, freeze_epochs=1, cbs=cbs)
 
 #learn = model_type.fastai.learner(dls=[train_dl, valid_dl], model=model, metrics=metrics, path = '/agroneural_pragas/checkpoints')
 
