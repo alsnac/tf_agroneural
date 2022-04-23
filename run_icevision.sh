@@ -1,6 +1,6 @@
 #!/bin/bash
 nvidia-smi
-apt-get install python3-tk
+apt-get install python3-tk -y
 python -m pip install --upgrade pip
 python -m pip install ipywidgets
 python -m pip install tk-tools
