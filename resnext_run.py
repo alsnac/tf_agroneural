@@ -31,12 +31,15 @@ validAugmentation = tfms.A.Adapter(
 trainAugmentation = tfms.A.Adapter(
     [*tfms.A.aug_tfms(size=(image_size, image_size), presize=presize), tfms.A.Normalize()])
 
+print("\n\n\n Carregando Modelo\n\n\n")
 model_type = models.mmdet.vfnet
 backbone = model_type.backbones.resnext101_32x4d_fpn_mdconv_c3_c5_mstrain_2x
 
 model = model_type.model(backbone=backbone(
     pretrained=True), num_classes=len(parser.class_map))
 
+
+print("\n\n\n Carregando Dataloader\n\n\n")
 train_dl = model_type.train_dl(
     train_ds, batch_size=6, num_workers=2, shuffle=True)
 valid_dl = model_type.valid_dl(
@@ -47,6 +50,8 @@ cbs = [fastai.SaveModelCallback()]
 learn = model_type.fastai.learner(
     dls=[train_dl, valid_dl], model=model, metrics=metrics, path='/agroneural_pragas/checkpoints')
 
+
+print("\n\n\n Fine Tunning: \n\n\n")
 learn.fine_tune(50, 3.3e-4, freeze_epochs=1, cbs=cbs)
 
 #learn = model_type.fastai.learner(dls=[train_dl, valid_dl], model=model, metrics=metrics, path = '/agroneural_pragas/checkpoints')
