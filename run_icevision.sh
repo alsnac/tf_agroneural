@@ -1,4 +1,5 @@
 #!/bin/bash
+nvidia-smi
 python -m pip install --upgrade pip
 python -m pip install setuptools==59.5.0
 wget https://raw.githubusercontent.com/airctic/icevision/master/icevision_install.sh
