@@ -31,15 +31,12 @@ validAugmentation = tfms.A.Adapter(
 trainAugmentation = tfms.A.Adapter(
     [*tfms.A.aug_tfms(size=(image_size, image_size), presize=presize), tfms.A.Normalize()])
 
-print("\n\n\n Carregando Modelo\n\n\n")
 model_type = models.mmdet.vfnet
 backbone = model_type.backbones.resnext101_32x4d_fpn_mdconv_c3_c5_mstrain_2x
 
 model = model_type.model(backbone=backbone(
     pretrained=True), num_classes=len(parser.class_map))
 
-
-print("\n\n\n Carregando Dataloader\n\n\n")
 train_dl = model_type.train_dl(
     train_ds, batch_size=6, num_workers=2, shuffle=True)
 valid_dl = model_type.valid_dl(
