@@ -50,6 +50,7 @@ cbs = [fastai.SaveModelCallback()]
 learn = model_type.fastai.learner(
     dls=[train_dl, valid_dl], model=model, metrics=metrics, path='/agroneural_pragas/checkpoints')
 
+learn.model.cuda()
 
 print("\n\n\n Fine Tunning: \n\n\n")
 learn.fine_tune(50, 3.3e-4, freeze_epochs=1, cbs=cbs)
