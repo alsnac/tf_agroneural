@@ -3,5 +3,6 @@ wget https://raw.githubusercontent.com/airctic/icevision/master/icevision_instal
 bash icevision_install.sh cuda10
 python resnext_run.py 
 
+echo "Finalizado"
 tail -f /dev/null
 
