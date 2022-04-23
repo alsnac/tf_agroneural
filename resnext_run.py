@@ -54,5 +54,3 @@ learn.fine_tune(50, 3.3e-4, freeze_epochs=1, cbs=cbs)
 # learn.load('/agroneural_pragas/checkpoints/models/model') #Inserir endereço do último checkpoint gerado
 #cbs = [fastai.SaveModelCallback()]
 #learn.fine_tune(1, 3e-4, cbs = cbs)
-
-print("finalizado")
