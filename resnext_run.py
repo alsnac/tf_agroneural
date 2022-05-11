@@ -43,7 +43,7 @@ valid_dl = model_type.valid_dl(
     valid_ds, batch_size=8, num_workers=2, shuffle=False)
 
 metrics = [COCOMetric(metric_type=COCOMetricType.bbox)]
-cbs = [fastai.SaveModelCallback()]
+cbs = [fastai.SaveModelCallback(every_epoch = True, at_end = True, with_opt = True)]
 learn = model_type.fastai.learner(
     dls=[train_dl, valid_dl], model=model, metrics=metrics, path='/agroneural_pragas/checkpoints')
 
