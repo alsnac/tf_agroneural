@@ -72,6 +72,7 @@ model_name = "faster_rcnn_inception_resnet_v2_1024x1024_coco17_tpu-8"
 #wget "http://download.tensorflow.org/models/object_detection/tf2/20200711/${model_name}.tar.gz"
 #tar -xf "${model_name}.tar.gz"
 #rm "${model_name}.tar.gz"
+#cd $3
 #----------------------------------------------------------------------------------------------------------------------
 
 
