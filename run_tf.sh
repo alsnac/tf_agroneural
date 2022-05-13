@@ -16,7 +16,7 @@
 
 
 #-----------------SSD Mobilenet v2 320x320---------------------
-model_name="ssd_mobilenet_v2_320x320_coco17_tpu-8"
+#model_name="ssd_mobilenet_v2_320x320_coco17_tpu-8"
 #--------------------------------------------------------------
 
 #-----------------EficienteDet D0------------------------------
@@ -41,7 +41,7 @@ model_name="ssd_mobilenet_v2_320x320_coco17_tpu-8"
 #--------------------------------------------------------------
 
 #-----------------Faster R-CNN ResNet50 V1 1024x1024------------------------------
-#model_name="faster_rcnn_inception_resnet_v2_1024x1024_coco17_tpu-8"
+model_name="faster_rcnn_inception_resnet_v2_1024x1024_coco17_tpu-8"
 #--------------------------------------------------------------
 
 #-----------------EficienteDet D4------------------------------
