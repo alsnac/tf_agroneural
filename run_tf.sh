@@ -92,7 +92,9 @@ wget https://raw.githubusercontent.com/alsnac/tf_agroneural/main/pipeline.config
 cd $3
 
 #Treinamento
+echo "Inicializando o treinamento....."
 python model_main_tf2.py --model_dir=$4 --pipeline_config_path="$4/pipeline.config"
+echo "Treinamento Finalizado....."
 
 #dar permissão para todos
 #chmod -R 777 "models/my_model"
