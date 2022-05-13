@@ -16,7 +16,7 @@
 nvidia-smi
 
 #-----------------SSD Mobilenet v2 320x320---------------------
-model_name="ssd_mobilenet_v2_320x320_coco17_tpu-8"
+#model_name="ssd_mobilenet_v2_320x320_coco17_tpu-8"
 #--------------------------------------------------------------
 
 #-----------------EficienteDet D0------------------------------
@@ -67,12 +67,12 @@ model_name="ssd_mobilenet_v2_320x320_coco17_tpu-8"
 #----------------------------------------------------------------------------------------------------------------------
 #---------------------------------------------------modelo-pre-treinado------------------------------------------------
 #Se quiser utilizar o modelo pre-treinando, adicionar em python model_main_tf2.py 
-#mkdir $1
-#cd $1
-#wget "http://download.tensorflow.org/models/object_detection/tf2/20200711/${model_name}.tar.gz"
-#tar -xf "${model_name}.tar.gz"
-#rm "${model_name}.tar.gz"
-#cd $3
+mkdir $1
+cd $1
+wget "http://download.tensorflow.org/models/object_detection/tf2/20200711/${model_name}.tar.gz"
+tar -xf "${model_name}.tar.gz"
+rm "${model_name}.tar.gz"
+cd $3
 #----------------------------------------------------------------------------------------------------------------------
 
 
