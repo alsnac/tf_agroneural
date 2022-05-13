@@ -13,7 +13,7 @@
 # NOME DO MODELO: nome da pasta ao finalizar o treinamento
 #----------------------------------------------------------------------------------------------------------------------
 
-nvidia-smi
+#nvidia-smi
 
 #-----------------SSD Mobilenet v2 320x320---------------------
 #model_name="ssd_mobilenet_v2_320x320_coco17_tpu-8"
