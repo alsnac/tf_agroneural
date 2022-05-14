@@ -12,6 +12,11 @@
 #----------------------------------------------------------------------------------------------------------------------
 # NOME DO MODELO: nome da pasta ao finalizar o treinamento
 #----------------------------------------------------------------------------------------------------------------------
+cd /agroneural_pragas/workspace/training_demo/annotations/fourClasses
+wget https://github.com/alsnac/scripts/blob/main/preprocessing/generate_tfrecord.py
+python generate_tfrecord.py test/
+python generate_tfrecord.py train/
+cd $3
 
 #nvidia-smi
 
