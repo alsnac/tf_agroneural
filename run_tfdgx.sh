@@ -14,8 +14,8 @@
 #----------------------------------------------------------------------------------------------------------------------
 cd /agroneural_pragas/workspace/training_demo/annotations/fourClasses
 wget https://github.com/alsnac/scripts/blob/main/preprocessing/generate_tfrecord.py
-python generate_tfrecord.py test/
-python generate_tfrecord.py train/
+python generate_tfrecord.py -x test/ -l labels.pbtxt
+python generate_tfrecord.py -x train/ -l labels.pbtxt
 cd $3
 
 #nvidia-smi
