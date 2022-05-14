@@ -13,7 +13,7 @@
 # NOME DO MODELO: nome da pasta ao finalizar o treinamento
 #----------------------------------------------------------------------------------------------------------------------
 cd /agroneural_pragas/workspace/training_demo/annotations/fourClasses
-pip install xml
+pip install xml-python
 pip install argparse
 pip install tqdm
 pip install glob2
