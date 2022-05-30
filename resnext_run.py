@@ -48,7 +48,7 @@ learn = model_type.fastai.learner(
     dls=[train_dl, valid_dl], model=model, metrics=metrics, path='/agroneural_pragas/checkpoints')
 
 learn.model.cuda()
-learn.fine_tune(150, 3.3e-4, freeze_epochs=1, cbs=cbs)
+learn.fine_tune(100, 3.3e-4, freeze_epochs=1, cbs=cbs)
 
 models.save_icevision_checkpoint(
     model, 
