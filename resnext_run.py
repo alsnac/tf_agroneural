@@ -16,8 +16,8 @@ parser = parsers.VOCBBoxParser(
 train_records, valid_records = parser.parse(
     RandomSplitter([0.80, 0.20], seed=1))
 
-image_size = 1024
-presize = 1024
+image_size = 1148
+presize = 1148
 train_tfms = tfms.A.Adapter(
     [*tfms.A.aug_tfms(size=(image_size, image_size), presize=presize), tfms.A.Normalize()])
 valid_tfms = tfms.A.Adapter(
