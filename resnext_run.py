@@ -48,23 +48,23 @@ learn = model_type.fastai.learner(
     dls=[train_dl, valid_dl], model=model, metrics=metrics, path='/agroneural_pragas/checkpoints')
 
 learn.model.cuda()
-learn.fine_tune(100, 3.3e-4, freeze_epochs=1, cbs=cbs)
+#learn.fine_tune(100, 3.3e-4, freeze_epochs=1, cbs=cbs)
 
-models.save_icevision_checkpoint(
-    model, 
-    model_name='mmdet.vfnet', 
-    backbone_name='resnext101_32x4d_fpn_mdconv_c3_c5_mstrain_2x',
-    classes=parser.class_map.get_classes(), 
-    img_size=1148, 
-    filename='/agroneural_pragas/checkpoints2/weights.pth'
-)
+#models.save_icevision_checkpoint(
+#    model, 
+#    model_name='mmdet.vfnet', 
+#    backbone_name='resnext101_32x4d_fpn_mdconv_c3_c5_mstrain_2x',
+#    classes=parser.class_map.get_classes(), 
+#    img_size=1148, 
+#    filename='/agroneural_pragas/checkpoints2/weights.pth'
+#)
 
 
 #learn = model_type.fastai.learner(dls=[train_dl, valid_dl], model=model, metrics=metrics, path = '/agroneural_pragas/checkpoints')
 
-#learn.load('/agroneural_pragas/checkpoints/models/model') #Inserir endereço do último checkpoint gerado
+learn.load('/agroneural_pragas/checkpoints/models/model') #Inserir endereço do último checkpoint gerado
 #cbs = [fastai.SaveModelCallback()]
-#learn.fine_tune(5, 3e-4, cbs = cbs)
+learn.fine_tune(80, 3e-4, cbs = cbs)
 
 #models.save_icevision_checkpoint(
 #    model, 
@@ -74,3 +74,11 @@ models.save_icevision_checkpoint(
 #    img_size=1024, 
 #    filename='/agroneural_pragas/checkpoints/weights.pth'
 #)
+models.save_icevision_checkpoint(
+    model, 
+    model_name='mmdet.vfnet', 
+    backbone_name='resnext101_32x4d_fpn_mdconv_c3_c5_mstrain_2x',
+    classes=parser.class_map.get_classes(), 
+    img_size=1148, 
+    filename='/agroneural_pragas/checkpoints2/weights.pth'
+)
