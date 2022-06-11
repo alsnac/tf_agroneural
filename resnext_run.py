@@ -16,8 +16,8 @@ parser = parsers.VOCBBoxParser(
 train_records, valid_records = parser.parse(
     RandomSplitter([0.80, 0.20], seed=1))
 
-image_size = 1148
-presize = 1148
+image_size = 1276
+presize = 1276
 train_tfms = tfms.A.Adapter(
     [*tfms.A.aug_tfms(size=(image_size, image_size), presize=presize), tfms.A.Normalize()])
 valid_tfms = tfms.A.Adapter(
@@ -45,10 +45,10 @@ valid_dl = model_type.valid_dl(
 metrics = [COCOMetric(metric_type=COCOMetricType.bbox)]
 cbs = [fastai.SaveModelCallback(at_end = True, with_opt = True)]
 learn = model_type.fastai.learner(
-    dls=[train_dl, valid_dl], model=model, metrics=metrics, path='/agroneural_pragas/checkpoints')
+    dls=[train_dl, valid_dl], model=model, metrics=metrics, path='/agroneural_pragas/checkpoints3')
 
 learn.model.cuda()
-#learn.fine_tune(100, 3.3e-4, freeze_epochs=1, cbs=cbs)
+learn.fine_tune(70, 3.3e-4, freeze_epochs=1, cbs=cbs)
 
 #models.save_icevision_checkpoint(
 #    model, 
@@ -62,9 +62,9 @@ learn.model.cuda()
 
 #learn = model_type.fastai.learner(dls=[train_dl, valid_dl], model=model, metrics=metrics, path = '/agroneural_pragas/checkpoints')
 
-learn.load('/agroneural_pragas/checkpoints/models/model') #Inserir endereço do último checkpoint gerado
+#learn.load('/agroneural_pragas/checkpoints/models/model') #Inserir endereço do último checkpoint gerado
 #cbs = [fastai.SaveModelCallback()]
-learn.fine_tune(80, 3e-4, cbs = cbs)
+#learn.fine_tune(80, 3e-4, cbs = cbs)
 
 #models.save_icevision_checkpoint(
 #    model, 
@@ -79,6 +79,6 @@ models.save_icevision_checkpoint(
     model_name='mmdet.vfnet', 
     backbone_name='resnext101_32x4d_fpn_mdconv_c3_c5_mstrain_2x',
     classes=parser.class_map.get_classes(), 
-    img_size=1148, 
-    filename='/agroneural_pragas/checkpoints2/weights.pth'
+    img_size=1276, 
+    filename='/agroneural_pragas/checkpoints3/weights.pth'
 )
