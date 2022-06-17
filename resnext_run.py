@@ -45,10 +45,10 @@ valid_dl = model_type.valid_dl(
 metrics = [COCOMetric(metric_type=COCOMetricType.bbox)]
 cbs = [fastai.SaveModelCallback(at_end = True, with_opt = True)]
 learn = model_type.fastai.learner(
-    dls=[train_dl, valid_dl], model=model, metrics=metrics, path='/agroneural_pragas/checkpoints3')
+    dls=[train_dl, valid_dl], model=model, metrics=metrics, path='/agroneural_pragas/checkpoints')
 
 learn.model.cuda()
-learn.fine_tune(70, 3.3e-4, freeze_epochs=1, cbs=cbs)
+learn.fine_tune(100, 3.3e-4, freeze_epochs=1, cbs=cbs)
 
 #models.save_icevision_checkpoint(
 #    model, 
@@ -80,5 +80,5 @@ models.save_icevision_checkpoint(
     backbone_name='resnext101_32x4d_fpn_mdconv_c3_c5_mstrain_2x',
     classes=parser.class_map.get_classes(), 
     img_size=1276, 
-    filename='/agroneural_pragas/checkpoints3/weights.pth'
+    filename='/agroneural_pragas/checkpoints/weights.pth'
 )
