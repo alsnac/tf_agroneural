@@ -16,8 +16,8 @@ parser = parsers.VOCBBoxParser(
 train_records, valid_records = parser.parse(
     RandomSplitter([0.80, 0.20], seed=1))
 
-image_size = 720
-presize = 720
+image_size = 1148
+presize = 1148
 train_tfms = tfms.A.Adapter(
     [*tfms.A.aug_tfms(size=(image_size, image_size), presize=presize), tfms.A.Normalize()])
 valid_tfms = tfms.A.Adapter(
@@ -38,9 +38,9 @@ model = model_type.model(backbone=backbone(
     pretrained=True), num_classes=len(parser.class_map))
 
 train_dl = model_type.train_dl(
-    train_ds, batch_size=2, num_workers=2, shuffle=True)
+    train_ds, batch_size=6, num_workers=2, shuffle=True)
 valid_dl = model_type.valid_dl(
-    valid_ds, batch_size=2, num_workers=2, shuffle=False)
+    valid_ds, batch_size=6, num_workers=2, shuffle=False)
 
 metrics = [COCOMetric(metric_type=COCOMetricType.bbox)]
 cbs = [fastai.SaveModelCallback(at_end = True, with_opt = True)]
@@ -79,6 +79,6 @@ models.save_icevision_checkpoint(
     model_name='mmdet.vfnet', 
     backbone_name='resnext101_32x4d_fpn_mdconv_c3_c5_mstrain_2x',
     classes=parser.class_map.get_classes(), 
-    img_size=720, 
+    img_size=1148, 
     filename='/agroneural_pragas/checkpoints/weights.pth'
 )
