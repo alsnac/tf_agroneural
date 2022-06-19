@@ -16,8 +16,8 @@ parser = parsers.VOCBBoxParser(
 train_records, valid_records = parser.parse(
     RandomSplitter([0.80, 0.20], seed=1))
 
-image_size = 960
-presize = 960
+image_size = 720
+presize = 720
 train_tfms = tfms.A.Adapter(
     [*tfms.A.aug_tfms(size=(image_size, image_size), presize=presize), tfms.A.Normalize()])
 valid_tfms = tfms.A.Adapter(
@@ -79,6 +79,6 @@ models.save_icevision_checkpoint(
     model_name='mmdet.vfnet', 
     backbone_name='resnext101_32x4d_fpn_mdconv_c3_c5_mstrain_2x',
     classes=parser.class_map.get_classes(), 
-    img_size=960, 
+    img_size=720, 
     filename='/agroneural_pragas/checkpoints/weights.pth'
 )
