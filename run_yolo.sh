@@ -2,9 +2,9 @@
 #tail -f /dev/null
 #----------------------------------------------------------------------------------------------------------------------
 pip install --upgrade pip
-#pip uninstall opencv-python
-#pip uninstall opencv-contrib-python
-#pip uninstall opencv-contrib-python-headless
+pip uninstall --yes opencv-python
+pip uninstall --yes opencv-contrib-python
+pip uninstall --yes opencv-contrib-python-headless
 pip install --no-input opencv-python==4.5.5.64
 
 echo "\nPWD \n"
