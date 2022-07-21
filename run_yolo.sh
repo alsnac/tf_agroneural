@@ -10,6 +10,7 @@ pwd
 echo "\nls -la \n"
 ls -la
 cd /usr/src/yolov5
+echo "25 de batch"
 python train.py --img 1024 --batch 25 --data data.yaml --weights yolov5x6.pt --name Model #--resume runs/train/Model5/weights/last.pt
 
 #Modelos: yolov5s6  yolov5m6  yolov5l6  yolov5x6 (small, medium, large, extralarge)
