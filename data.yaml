@@ -1,8 +1,10 @@
-train: agro_dataset_four/train
-val: agro_dataset_four/test
-nc: 4
-names: ['helicoverpa_armigera',
+train: entre_lagartas/train
+val: entre_lagartas/test
+nc: 6
+names: ['dichelops_melacanthus',
         'spodoptera_frugiperda',
-        'dichelops_melacanthus',
         'anticarsia_gemmatalis',
+        'chrysodeixis_includens',
+        'spodoptera_cosmioides',
+        'spodoptera_eridania',
 ]
