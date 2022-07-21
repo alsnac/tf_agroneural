@@ -5,7 +5,7 @@ pip install --upgrade pip
 #pip uninstall opencv-python
 #pip uninstall opencv-contrib-python
 #pip uninstall opencv-contrib-python-headless
-pip install opencv-python==4.5.5.64
+pip install --no-input opencv-python==4.5.5.64
 
 echo "\nPWD \n"
 pwd
