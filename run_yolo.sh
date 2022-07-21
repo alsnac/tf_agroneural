@@ -1,7 +1,7 @@
 #!/bin/bash
 #tail -f /dev/null
 #----------------------------------------------------------------------------------------------------------------------
-
+pip install opencv-python==4.5.5.64
 cd /usr/src/yolov5
 python train.py --img 1024 --batch 30 --data data.yaml --weights yolov5x6.pt --name Model #--resume runs/train/Model5/weights/last.pt
 
