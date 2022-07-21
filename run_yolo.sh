@@ -13,5 +13,5 @@ python train.py --img 1024 --batch 20 --data data.yaml --weights yolov5x6.pt --n
 #Modelos: yolov5s6  yolov5m6  yolov5l6  yolov5x6 (small, medium, large, extralarge)
 #--cache: Mais rápido para treinar, mas enche a memória da GPU
 
-echo "\nEnd of file!"
+echo "End of file!"
 tail -f /dev/null
