@@ -2,10 +2,10 @@
 #tail -f /dev/null
 #----------------------------------------------------------------------------------------------------------------------
 pip install --upgrade pip
-pip uninstall --yes opencv-python
-pip uninstall --yes opencv-contrib-python
-pip uninstall --yes opencv-contrib-python-headless
-pip install --no-input opencv-python==4.5.5.64
+#pip uninstall --yes opencv-python
+#pip uninstall --yes opencv-contrib-python
+#pip uninstall --yes opencv-contrib-python-headless
+#pip install --no-input opencv-python==4.5.5.64
 
 echo "\nPWD \n"
 pwd
