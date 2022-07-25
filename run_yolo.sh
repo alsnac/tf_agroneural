@@ -7,7 +7,7 @@ pip install opencv-python==4.5.5.64
 ls -la
 cd /usr/src/yolov5
 
-echo "50 de batch"
+echo "30 de batch"
 
 #A100
 #python train.py --img 1024 --batch 50 --data data.yaml --weights yolov5l6.pt --name Model --workers 2 #--resume runs/train/Model5/weights/last.pt
